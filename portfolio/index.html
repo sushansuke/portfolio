@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sushant Kumar — Content, Code & Design</title>
+  <meta name="description"
+    content="Portfolio of Sushant Kumar — exploring content, photography, video editing, and coding." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">Sushant</span>
+      <span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+      <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+      <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+    </ul>
+    
+    <div class="nav-actions">
+      <!-- Theme Switcher -->
+      <div class="theme-switcher" id="theme-switcher">
+        <button class="theme-btn active" data-theme="dark" title="Dark Slate Theme" aria-label="Dark Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="theme-btn" data-theme="light" title="Light Minimal Theme" aria-label="Light Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <button class="theme-btn" data-theme="ocean" title="Ocean Blue Theme" aria-label="Ocean Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+        </button>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        <span>Always learning</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Exploring <span class="gradient-text">content,</span></span>
+        <span class="title-line"><span class="gradient-text">design</span> and</span>
+        <span class="title-line">vibe <span class="gradient-text animated-word"
+            id="animated-word">coding</span>.</span>
+      </h1>
+      <p class="hero-description">
+        Quick learner with deep thinking and analytical skills. I'm exploring Content & Script Writing, Photography, Video Editing, and Programming.
+      </p>
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-primary" id="view-work-btn">
+          <span>More About Me</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn btn-secondary" id="lets-talk-btn">Let's Talk</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+          <span class="stat-label">Curiosity</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Skills Learning</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="24">0</span><span class="stat-plus">/7</span>
+          <span class="stat-label">Analytical Mind</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card glass-card" style="text-align: center; padding: 40px 24px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: var(--primary); opacity: 0.2; filter: blur(50px); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -50px; left: -50px; width: 150px; height: 150px; background: var(--secondary); opacity: 0.2; filter: blur(50px); border-radius: 50%;"></div>
+        
+        <div class="profile-avatar" style="width: 100px; height: 100px; margin: 0 auto 20px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white; font-weight: 800; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative; z-index: 2;">
+          S
+        </div>
+        <h3 style="font-size: 1.6rem; margin-bottom: 6px; font-weight: 700; position: relative; z-index: 2;">Sushant Kumar</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; position: relative; z-index: 2;">Creator • Thinker • Learner</p>
+        
+        <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; position: relative; z-index: 2;">
+           <span style="padding: 6px 14px; border-radius: 100px; background: var(--glass); border: 1px solid var(--glass-border); font-size: 0.75rem; font-weight: 600;">Photography</span>
+           <span style="padding: 6px 14px; border-radius: 100px; background: var(--glass); border: 1px solid var(--glass-border); font-size: 0.75rem; font-weight: 600;">Writing</span>
+           <span style="padding: 6px 14px; border-radius: 100px; background: var(--glass); border: 1px solid var(--glass-border); font-size: 0.75rem; font-weight: 600;">Video</span>
+        </div>
+      </div>
+      <div class="floating-badge badge-1 glass-card">
+        <span>Photography</span>
+      </div>
+      <div class="floating-badge badge-2 glass-card">
+        <span>Vibe Coder</span>
+      </div>
+      <div class="floating-badge badge-3 glass-card">
+        <span>Video Editing</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-wrapper">
+          <div class="about-image-frame">
+            <div class="about-image-placeholder">
+              <div class="avatar-initials">S</div>
+              <div class="avatar-ring ring-1"></div>
+              <div class="avatar-ring ring-2"></div>
+              <div class="avatar-ring ring-3"></div>
+            </div>
+            <div class="about-image-decoration"></div>
+        </div>
+        <div class="about-content">
+          <p class="about-intro">Hey! I'm <strong>Sushant Kumar</strong></p>
+          <p class="about-text">
+            I'm a quick learner with deep thinking and analytical skills. 
+            Currently, I am in the learning phase of several exciting fields including <strong>Content and Script writing, Photography, Video, and Video Editing</strong>.
+          </p>
+          <p class="about-text">
+            On the tech side, I understand the basics and structure of vibe coding and know the foundational syntax of languages like <strong>C and Python</strong>. 
+            I'm passionate about bringing these interests together to create engaging content and experiences.
+          </p>
+          <div class="about-details">
+            <div class="detail-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="#a78bfa" stroke-width="1.5" />
+                <path d="M13.5 8c0 3.5-5.5 7-5.5 7S2.5 11.5 2.5 8a5.5 5.5 0 0 1 11 0Z" stroke="#a78bfa"
+                  stroke-width="1.5" />
+              </svg>
+              <span>India</span>
+            </div>
+            <div class="detail-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="2" y="3" width="12" height="10" rx="1.5" stroke="#a78bfa" stroke-width="1.5" />
+                <path d="M2 6h12" stroke="#a78bfa" stroke-width="1.5" />
+              </svg>
+              <span>Open to Remote</span>
+            </div>
+            <div class="detail-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="8" r="5.5" stroke="#a78bfa" stroke-width="1.5" />
+                <path d="M8 5v3.5l2 1" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+              <span>Freelance & Full-time</span>
+            </div>
+          </div>
+          <div class="about-actions">
+            <a href="#" class="btn btn-primary" id="download-cv-btn" download>
+              <span>Download CV</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 2v9M5 8l3 3 3-3M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <div class="social-links">
+              <a href="https://github.com" target="_blank" class="social-link" id="github-link" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="social-link" id="linkedin-link"
+                aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" class="social-link" id="twitter-link" aria-label="Twitter">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I'm Learning</span>
+        <h2 class="section-title">My <span class="gradient-text">Focus Areas</span></h2>
+      </div>
+      <div class="skills-tabs">
+        <button class="tab-btn active" data-tab="creative" id="tab-creative">Creative Media</button>
+        <button class="tab-btn" data-tab="coding" id="tab-coding">Programming</button>
+      </div>
+      <div class="skills-content">
+        <!-- Creative -->
+        <div class="tab-panel active" id="panel-creative">
+          <div class="skills-grid">
+            <div class="skill-card glass-card">
+              <div class="skill-icon" style="background: linear-gradient(135deg, #a78bfa22, #a78bfa11)">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              </div>
+              <span class="skill-name">Content Writing</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="70"></div>
+              </div>
+              <span class="skill-level">Learning</i>
+            </div>
+            <div class="skill-card glass-card">
+              <div class="skill-icon" style="background: linear-gradient(135deg, #f472b622, #f472b611)">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <span class="skill-name">Script Writing</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="65"></div>
+              </div>
+              <span class="skill-level">Learning</i>
+            </div>
+            <div class="skill-card glass-card">
+              <div class="skill-icon" style="background: linear-gradient(135deg, #67e8f922, #67e8f911)">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#67e8f9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              </div>
+              <span class="skill-name">Photography</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+              <span class="skill-level">Learning</i>
+            </div>
+            <div class="skill-card glass-card">
+              <div class="skill-icon" style="background: linear-gradient(135deg, #8b5cf622, #8b5cf611)">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+              </div>
+              <span class="skill-name">Video Editing</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="75"></div>
+              </div>
+              <span class="skill-level">Learning</i>
+            </div>
+          </div>
+        </div>
+        <!-- Coding -->
+        <div class="tab-panel" id="panel-coding">
+          <div class="skills-grid">
+            <div class="skill-card glass-card">
+              <div class="skill-icon" style="background: linear-gradient(135deg, #3776AB22, #3776AB11)">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3776AB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              </div>
+              <span class="skill-name">Python</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="60"></div>
+              </div>
+              <span class="skill-level">Basics</i>
+            </div>
+            <div class="skill-card glass-card">
+              <div class="skill-icon" style="background: linear-gradient(135deg, #a8b9cc22, #a8b9cc11)">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a8b9cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <span class="skill-name">C</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="65"></div>
+              </div>
+              <span class="skill-level">Basics</i>
+            </div>
+            <div class="skill-card glass-card">
+              <div class="skill-icon" style="background: linear-gradient(135deg, #a78bfa22, #a78bfa11)">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"></path></svg>
+              </div>
+              <span class="skill-name">Vibe Coding</span>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+              <span class="skill-level">Understanding</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Section Removed -->
+
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
+        <p class="section-subtitle">Have a project in mind? I'd love to hear about it. Send me a message and let's
+          create something amazing.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item glass-card" id="contact-email">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#a78bfa"
+                  stroke-width="1.5" />
+                <path d="M22 6l-10 7L2 6" stroke="#a78bfa" stroke-width="1.5" />
+              </svg>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Email</span>
+              <a href="mailto:susha@example.com" class="contact-value">susha@example.com</a>
+            </div>
+          </div>
+          <div class="contact-item glass-card" id="contact-phone">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.76 12 19.79 19.79 0 0 1 1.69 3.41 2 2 0 0 1 3.68 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6.08 6.08l1-1.02a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                  stroke="#a78bfa" stroke-width="1.5" />
+              </svg>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Phone</span>
+              <a href="tel:+911234567890" class="contact-value">+91 123 456 7890</a>
+            </div>
+          </div>
+          <div class="contact-item glass-card" id="contact-location">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="#a78bfa" stroke-width="1.5" />
+                <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 13 8 13s8-7.75 8-13a8 8 0 0 0-8-8Z" stroke="#a78bfa"
+                  stroke-width="1.5" />
+              </svg>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">India 🇮🇳 (Remote Worldwide)</span>
+            </div>
+          </div>
+
+        </div>
+        <form class="contact-form glass-card" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Your email address" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+              required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-full" id="submit-btn">
+            <span id="btn-text">Send Message</span>
+            <svg id="btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M14 2L2 6l4.5 3.5L11 5l-4.5 4.5L10 14l4-12z" stroke="currentColor" stroke-width="1.5"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="form-success" id="form-success">
+            <span>🎉</span>
+            <p>Message sent! I'll get back to you within 24 hours.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="logo-bracket">&lt;</span>
+            <span class="logo-name">Sushant</span>
+            <span class="logo-bracket">/&gt;</span>
+          </div>
+          <p>Crafting digital experiences that make people stop and stare. Let's build something remarkable together.
+          </p>
+          <div class="footer-social">
+            <a href="https://github.com" target="_blank" id="footer-github" aria-label="GitHub" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" id="footer-linkedin" aria-label="LinkedIn"
+              class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" id="footer-twitter" aria-label="Twitter" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#contact">Web Development</a></li>
+            <li><a href="#contact">UI/UX Design</a></li>
+            <li><a href="#contact">Mobile Apps</a></li>
+            <li><a href="#contact">Consulting</a></li>
+            <li><a href="#contact">Mentoring</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year">2024</span> Sushant Kumar. Designed & built with ♥</p>
+        <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to top">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 15V5M5 10l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
